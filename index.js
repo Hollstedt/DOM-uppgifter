@@ -28,8 +28,8 @@ let addedButtonToBody = document.querySelector("body");
             pTag.style.fontSize = "20px"
         });
 
-        let liitags = document.querySelectorAll("li");
-        liitags.forEach(function(liTag) {
+        let liiTags = document.querySelectorAll("li");
+        liiTags.forEach(function(liTag) {
             liTag.style.listStyleType = "none";
             liTag.style.display = "inline";
             liTag.style.padding = "10px";
@@ -53,4 +53,62 @@ myArray.forEach(function(number, index) {
     } else {
         newLiTag.style.color = "yellow";
     }
+});
+
+
+let profileArray = [
+    {
+        name: "Johan",
+        age: 35,
+        amoutOfPets: 2,
+        email: "johan@me.com",
+        favoriteAuthor: "Stephen King",
+        lovesWinter: true
+    },
+    {
+        name: "Kalle",
+        age: 32,
+        amoutOfPets: 1,
+        email: "kalle@me.com",
+        favoriteAuthor: "Agatha Christie",
+        lovesWinter: false
+    },
+    {
+        name: "Erik",
+        age: 27,
+        amoutOfPets: 0,
+        email: "erik@me.com",
+        favoriteAuthor: "J.K. Rowling",
+        lovesWinter: true
+    }
+]
+
+let showProfileBtn = document.querySelector(".profile-btn");
+
+showProfileBtn.addEventListener("click", function() {
+
+    let profileCards = document.querySelectorAll(".profile-cards");
+    
+    profileCards.forEach(function(profileCard) {
+        profileCard.style.visibility = "visible";
+    });
+
+    profileArray.forEach(function(profile, index) {
+        let profileName = profile.name;
+        let profileAge = profile.age;
+        let profilePets = profile.amoutOfPets;
+        let profileEmail = profile.email;
+        let profileFavAuthor = profile.favoriteAuthor;
+        let profileLovesWinter = profile.lovesWinter;
+
+        let profileCard = document.querySelector(`#profile-${index + 1}`);
+        profileCard.innerHTML = `
+            <h2>${profileName}</h2>
+            <p>Age: ${profileAge}</p>
+            <p>Amount of pets: ${profilePets}</p>    
+            <p>Email: ${profileEmail}</p>
+            <p>Favorite author: ${profileFavAuthor}</p>
+        `;
+    });
+
 });
