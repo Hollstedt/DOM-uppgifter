@@ -17,6 +17,7 @@
 
         p {
             margin-bottom: 15px;
+            line-height: 30px;
         }
 
         button {
@@ -29,7 +30,7 @@
             cursor: pointer;
         }
 
-        .inTheDiv {
+        .li-container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -37,6 +38,7 @@
             height: 200px;
             width: 500px;
             margin-bottom: 10px;
+            background-color: rgb(209, 129, 23);
         }
     }
 }

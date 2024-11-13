@@ -22,9 +22,35 @@ let addedButtonToBody = document.querySelector("body");
     newButton.addEventListener("click", function() {
         let allPTags = document.querySelectorAll("p");
         allPTags.forEach(function(pTag) {
-            pTag.innerText = "Surprise motherfucker - I am a big boy now";
+            pTag.innerText = "Surprise mother-fudge - I am a big boy now";
             pTag.style.color = "white";
             pTag.style.fontFamily = "monospace";
-            pTag.style.fontSize = "20px";
+            pTag.style.fontSize = "20px"
+        });
+
+        let liitags = document.querySelectorAll("li");
+        liitags.forEach(function(liTag) {
+            liTag.style.listStyleType = "none";
+            liTag.style.display = "inline";
+            liTag.style.padding = "10px";
         });
     });
+
+let myArray = [2,5,10,15,20,25,30,50,60,92];
+
+let newUlTag = document.createElement("ul");
+let addedUlToBody = document.querySelector(".li-container");
+    addedUlToBody.append(newUlTag);
+    
+myArray.forEach(function(number, index) {
+    let newLiTag = document.createElement("li");
+    newUlTag.append(newLiTag);
+    newLiTag.innerText = number;
+    if ((index + 1) % 5 === 0) {
+        newLiTag.style.color = "purple";
+    } else if (number % 2 === 0) {
+        newLiTag.style.color = "white";
+    } else {
+        newLiTag.style.color = "yellow";
+    }
+});
