@@ -89,26 +89,35 @@ showProfileBtn.addEventListener("click", function() {
 
     let profileCards = document.querySelectorAll(".profile-cards");
     
-    profileCards.forEach(function(profileCard) {
-        profileCard.style.visibility = "visible";
-    });
-
     profileArray.forEach(function(profile, index) {
+
+        
         let profileName = profile.name;
         let profileAge = profile.age;
         let profilePets = profile.amoutOfPets;
         let profileEmail = profile.email;
         let profileFavAuthor = profile.favoriteAuthor;
         let profileLovesWinter = profile.lovesWinter;
+        
+        if (profileLovesWinter === true) {
+            profileCards[index].style.backgroundColor = "orange";    
+        } else {
+            profileCards[index].style.backgroundColor = "lightblue";
+        }
 
         let profileCard = document.querySelector(`#profile-${index + 1}`);
         profileCard.innerHTML = `
             <h2>${profileName}</h2>
-            <p>Age: ${profileAge}</p>
-            <p>Amount of pets: ${profilePets}</p>    
-            <p>Email: ${profileEmail}</p>
-            <p>Favorite author: ${profileFavAuthor}</p>
+            <span><strong>Age:</strong> ${profileAge}</span><br>
+            <span><strong>Amount of pets:</strong> ${profilePets}</span><br>    
+            <span><strong>Email:</strong> ${profileEmail}</span><br>
+            <span><strong>Favorite author:</strong> ${profileFavAuthor}</span><br>
+            ${profileLovesWinter ? `<span><strong>Loves winter:</strong> Yes</span>` : `<span><strong>Loves winter:</strong> No</span>`}
         `;
+    });
+
+    profileCards.forEach(function(profileCard) {
+        profileCard.style.visibility = "visible";
     });
 
 });

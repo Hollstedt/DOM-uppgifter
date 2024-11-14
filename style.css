@@ -19,6 +19,10 @@
   margin-bottom: 15px;
   line-height: 30px;
 }
+* body span {
+  margin-bottom: 15px;
+  line-height: 20px;
+}
 * body button {
   margin-bottom: 10px;
   width: 105px;
